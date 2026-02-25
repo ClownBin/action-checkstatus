@@ -2,7 +2,7 @@
   "name": "action-checkstatus",
   "version": "1.0.0",
   "description": "检查workflow执行状态是否正确",
-  "main": "index.js",
+  "main": "dist/setup/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
