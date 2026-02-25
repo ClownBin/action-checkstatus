@@ -1,4 +1,4 @@
-const { checkStatus } = require('../../../src/checkstatus');
+import { checkStatus } from '../../../src/checkstatus';
 
 checkStatus();
 
