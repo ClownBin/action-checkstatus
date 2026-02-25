@@ -1,0 +1,25 @@
+name: 'Check Current Workflow Status'
+description: '检查当前执行的 GitHub Actions workflow 运行状态'
+author: 'ClownBin'
+
+inputs:
+  github-token:
+    description: '类型: string。GitHub token，用于调用 GitHub Actions API。不传则默认使用 GITHUB_TOKEN 环境变量。'
+    required: false
+  fail-on-non-success:
+    description: '类型: string (boolean 字符串)，可选值 "true"/"false"。当当前运行已完成且结论不是 success 时，让该步骤失败。值为 "true" 时生效。'
+    required: false
+    default: 'false'
+
+outputs:
+  run-id:
+    description: '类型: string。当前 workflow run 的 ID'
+  status:
+    description: '类型: string。当前 workflow run 的状态（queued / in_progress / completed）'
+  conclusion:
+    description: '类型: string。当前 workflow run 的结果（success / failure / cancelled 等，只有在 completed 时才有值）'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
+
